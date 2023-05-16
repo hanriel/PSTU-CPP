@@ -331,4 +331,4 @@ s->name = "John";
 ```
 
 
-[uml-diagram]: ./assets/s2p1.svg "Logo Title Text 2"
+[uml-diagram]: ./assets/s2p1.svg "UML Diagram"
