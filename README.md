@@ -1,5 +1,7 @@
 # PNIPU - C++ Labs
 
+![cmake](https://github.com/hanriel/PSTU-CPP/actions/workflows/cmake.yml/badge.svg)
+
 ## Reports
 ### Semester #1
 
