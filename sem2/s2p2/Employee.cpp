@@ -1,47 +1,47 @@
-#include "employee.h"
+#include "Employee.h"
 #include <iostream>
 #include <string>
 
-// Конструктор без параметров
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 Employee::Employee() {
 	fio = "";
 	post = "";
 	salary = 0;
-	cout << "====Конструктор без параметров====" << endl;
+	cout << "====ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў====" << endl;
 }
 
-// Конструктор c параметрами
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° c ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
 Employee::Employee(string _fio, string _post, double _salary) {
 	fio = _fio;
 	post = _post;
 	salary = _salary;
-	cout << "===Конструктор c параметрами===" << endl;
+	cout << "===ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° c ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ===" << endl;
 }
 
-// Конструктор копирования
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 Employee::Employee(const Employee &e) {
 	fio = e.fio;
 	post = e.post;
 	salary = e.salary;
-	cout << "===Конструктор копирования===" << endl;
+	cout << "===ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї===" << endl;
 }
 
-// Деструктор
+// Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 Employee::~Employee() {
-	cout << "Деструктор для объекта: " << this << endl;
+	cout << "Г„ГҐГ±ГІГ°ГіГЄГІГ®Г° Г¤Г«Гї Г®ГЎГєГҐГЄГІГ : " << this << endl;
 }
 
-// Селекторы
+// Г‘ГҐГ«ГҐГЄГІГ®Г°Г»
 string Employee::getFIO() {	return fio; }
 string Employee::getPost() { return post; }
 double Employee::getSalary() { return salary; }
 
-// Модификаторы
+// ГЊГ®Г¤ГЁГґГЁГЄГ ГІГ®Г°Г»
 void Employee::setFIO(string _fio) { fio = _fio; }
 void Employee::setPost(string _post) { post = _post; }
 void Employee::setSalary(double _salary) { salary = _salary; }
 
-//Метод для просмтра атрибутов
+//ГЊГҐГІГ®Г¤ Г¤Г«Гї ГЇГ°Г®Г±Г¬ГІГ°Г  Г ГІГ°ГЁГЎГіГІГ®Гў
 void Employee::show() {
 	cout << "" << fio << endl;
 	cout << "" << post << endl;
