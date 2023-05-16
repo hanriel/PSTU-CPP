@@ -1,18 +1,14 @@
 #include "money.h"
 #include <iomanip>
 
-Money::Money() {
-    rub = 0; cheers = 0;
-}
+Money::Money() { rub = 0; cheers = 0; }
 
 Money::Money(long r, int c) {
     rub = (r * 100 + c) / 100; cheers = c;
     cheers = (r * 100 + c) % 100;
 }
 
-Money::Money(const Money& m) {
-    rub = m.rub; cheers = m.cheers;
-}
+Money::Money(const Money& m) { rub = m.rub; cheers = m.cheers; }
 
 Money::~Money() {}
 
