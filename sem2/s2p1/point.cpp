@@ -1,5 +1,5 @@
 #include <iostream>
-#include "fraction.h"
+#include "point.h"
 using namespace std;
 
 void point::Init(double X, double Y)
