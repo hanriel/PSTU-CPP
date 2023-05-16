@@ -1,4 +1,6 @@
+#include "money.h"
 #include <iostream>
+using namespace std;
 
 /*
 Создать класс Money для работы с денежными суммами.
@@ -8,7 +10,24 @@
 - Опрерации сравнения (==, !=)
 */
 
-int main(){
+int main() {
+    // конструкторы без параметров
+    Money a;
+    Money b;
+    Money c;
+
+    // ввод переменных
+    cin >> a;
+    cin >> b;
+
+    // разность
+    c = a - b;
+
+    // вывод переменной
+    cout<<"a="<<a<<endl;
+    cout<<"b="<<b<<endl;
+    cout<<"c="<<c<<endl;
+
     return 0;
 }
 

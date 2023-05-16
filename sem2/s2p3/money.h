@@ -3,23 +3,28 @@
 
 using namespace std;
 
-class Money
-{
+class Money {
 	long rub;
 	int cheers;
 
 public:
-	Money() { rub = 0; cheers = 0; };
-	Money(long r, int c) { rub = r; cheers = c; };
-	Money(const Money& m) { rub = m.rub; cheers = m.cheers; };
-	~Money() {};
-	long getRub() { return rub; };
-	int getCheers() { return cheers; };
-	void setRub(long r) { rub = r;  };
-	void setCheers(long c) { cheers = c; };
-
-	Money& operator-(long);
-
+	Money();
+	Money(long, int);
+	Money(const Money&);
+	~Money();
+	long getRub();
+	int getCheers();
+	void setRub(long r);
+	void setCheers(long c);
 	
+	//перегруженные операции
+	Money& operator=(const Money&);
+	friend bool operator==(const Money& lhs, const Money& rhs);
+	friend bool operator!=(const Money& lhs, const Money& rhs);
+	friend Money operator-(const Money& lhs, const Money& rhs);
+
+	//глобальные функции ввода-вывода
+	friend istream& operator>>(istream&in, Money&m);
+	friend ostream& operator<<(ostream&out, const Money&m);
 };
 
