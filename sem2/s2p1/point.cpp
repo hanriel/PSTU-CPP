@@ -1,5 +1,6 @@
 #include <iostream>
 #include "point.h"
+#include <cmath>
 using namespace std;
 
 void point::Init(double X, double Y)
