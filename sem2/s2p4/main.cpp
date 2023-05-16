@@ -1,6 +1,3 @@
-#include <iostream>
-#include "triad.h"
-
 /*
 Базовый класс:
     ТРОЙКА_ЧИСЕЛ (TRIAD)
@@ -12,7 +9,25 @@
 полный набор операций сравнения временных промежутков.
 */
 
+#include <iostream>
+#include "triad.h"
+#include "mytime.h"
+
+using namespace std;
+
+//Функция принимает обект базавого класса как параметр
+void f1(Triad &t){
+    t.setFirst(0);
+}
+
+//Функция возвращает обект базавого класса
+Triad f2(){
+    TIME t(12, 30, 0);
+    return t;
+}
+
 int main() {
+    // Работа с классом TRIAD
     Triad a;
     cin >> a;
     cout << a;
@@ -21,5 +36,16 @@ int main() {
     cout << b;
     a=b;
     cout << a;
+
+    // Работа с классом TIME
+    TIME t;
+    cin >> t;
+    cout << t;
+
+    // Принцип подстановки
+    f1(t);
+    a = f2();
+    cout << a;
+
     return 0;
 }

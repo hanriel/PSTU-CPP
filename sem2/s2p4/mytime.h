@@ -8,8 +8,11 @@ using namespace std;
 class TIME : public Triad {
 public:
     using Triad::Triad;
+
+    bool operator==(const Triad &);
+    bool operator!=(const Triad &);
+    friend ostream &operator<<(ostream &, const TIME &);
+    friend istream &operator>>(istream &, TIME &);
 };
 
-std::ostream& operator << (std::ostream &out, const TIME &t) {
-    return out << t.first << ':' << t.second << ':' << t.third;
-}
+

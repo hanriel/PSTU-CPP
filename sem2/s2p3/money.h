@@ -19,8 +19,8 @@ public:
 	
 	//перегруженные операции
 	Money& operator=(const Money&);
-	friend bool operator==(const Money& lhs, const Money& rhs);
-	friend bool operator!=(const Money& lhs, const Money& rhs);
+	bool operator==(const Money&);
+	bool operator!=(const Money&);
 	friend Money operator-(const Money& lhs, const Money& rhs);
 
 	//глобальные функции ввода-вывода

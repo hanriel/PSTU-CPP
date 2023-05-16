@@ -25,9 +25,9 @@ Triad &Triad::operator = (const Triad &t) {
 }
 
 istream &operator >> (istream &in, Triad &c) {
-    cout << "\nFirst: "; in>>c.first;
-    cout << "\nSecond: "; in>>c.second;
-    cout << "\nThird: "; in>>c.third;
+    cout << "FIRST: "; in>>c.first;
+    cout << "SECOND: "; in>>c.second;
+    cout << "THIRD: "; in>>c.third;
     return in;
 }
 

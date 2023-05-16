@@ -30,12 +30,12 @@ Money& Money::operator=(const Money &m) {
 }
 
 // перегрузка операций сравнения
-bool operator==(const Money& lhs, const Money& rhs) {
-    return lhs.rub == rhs.rub && lhs.cheers == rhs.cheers;
+bool Money::operator==(const Money& other) {
+    return (this->rub == other.rub && this->cheers == other.cheers);
 }
 
-bool operator!=(const Money& lhs, const Money& rhs) {
-    return !(lhs.rub != rhs.rub || lhs.cheers != rhs.cheers);
+bool Money::operator!=(const Money& other) {
+    return !(*this == other);
 }
 
 // перегрузка операции вычитания
