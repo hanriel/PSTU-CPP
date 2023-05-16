@@ -4,8 +4,8 @@
 
 using namespace std;
 
-class Employee
-{
+class Employee {
+
 	string fio;
 	string post;
 	double salary;
@@ -26,6 +26,4 @@ public:
 	void setSalary(double);
 
 	void show();
-
 };
-
