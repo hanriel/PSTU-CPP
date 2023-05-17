@@ -27,13 +27,57 @@
 
 
 ## Определение глобальных функций
+```
+bool TIME::operator==(const TIME &other) {
+    return (
+        this->first == other.first &&
+        this->second == other.second &&
+        this->third == other.third
+    );
+}
 
+bool TIME::operator!=(const TIME &other) { return !(*this == other); }
+```
 
 ## Функция main()
+```
+int main() {
+    Vector v(5); // Вектор из 5 элементов
 
+    Triad a;
+    cin >> a;
+
+    TIME b;
+    cin >> b;
+
+    Object *p = &a;
+    v.Add(p);
+    p = &b;
+    v.Add(p);
+
+    cout << v;
+    return 0;
+}
+```
 
 ## Объяснение результатов работы программы
+```
+FIRST: 10
+SECOND: 20
+THIRD: 30
 
+Hours: 10
+Minutes: 20
+Minutes: 30
+
+FIRST : 10
+SECOND : 20
+THIRD : 30
+
+HOU : 10
+MIN : 20
+SEC : 30
+```
 
 ## Ответы на контрольные вопросы
 ### 1. Какой метод называется чисто виртуальным? Чем он отличается от виртуального метода?

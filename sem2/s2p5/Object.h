@@ -2,7 +2,7 @@
 
 class Object {
 public:
-    Object(void);
-    ~Object(void);
+    Object();
+    ~Object();
     virtual void Show()=0; //чисто виртуальная функция
 };

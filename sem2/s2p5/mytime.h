@@ -8,9 +8,9 @@ using namespace std;
 class TIME : public Triad {
 public:
     using Triad::Triad;
-
-    bool operator==(const Triad &);
-    bool operator!=(const Triad &);
+    void Show();//функция для просмотра атрибутов класса с помощью указателя
+    bool operator==(const TIME &);
+    bool operator!=(const TIME &);
     friend ostream &operator<<(ostream &, const TIME &);
     friend istream &operator>>(istream &, TIME &);
 };

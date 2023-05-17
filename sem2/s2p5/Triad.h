@@ -10,7 +10,7 @@ protected:
     int third;
 
 public:
-    Triad(void);
+    Triad();
     Triad(int, int, int);
     Triad(const Triad &);
     virtual ~Triad(void);

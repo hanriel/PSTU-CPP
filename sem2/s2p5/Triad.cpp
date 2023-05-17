@@ -22,6 +22,7 @@ Triad &Triad::operator = (const Triad &t) {
     first = t.first;
     second = t.second;
     third = t.third;
+    return *this;
 }
 
 istream &operator >> (istream &in, Triad &c) {
@@ -53,3 +54,9 @@ bool operator == (const Triad &lhs, const Triad &rhs) {
 }
 
 
+void Triad::Show() {
+    cout << "\nFIRST : " << first;
+    cout << "\nSECOND : " << second;
+    cout << "\nTHIRD : " << third;
+    cout << "\n";
+}
