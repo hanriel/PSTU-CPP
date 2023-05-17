@@ -42,7 +42,7 @@ bool TIME::operator!=(const TIME &other) { return !(*this == other); }
 ## Функция main()
 ```
 int main() {
-    Vector v(5); // Вектор из 5 элементов
+    Array v(5); // Вектор из 5 элементов
 
     Triad a;
     cin >> a;
