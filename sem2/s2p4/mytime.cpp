@@ -19,6 +19,6 @@ ostream &operator<<(std::ostream &out, const TIME &t) {
 istream &operator>>(istream &in, TIME &t) {
     cout << "Hours: "; in >> t.first;
     cout << "Minutes: "; in >> t.second;
-    cout << "Minutes: "; in >> t.third;
+    cout << "Seconds: "; in >> t.third;
     return in;
 }

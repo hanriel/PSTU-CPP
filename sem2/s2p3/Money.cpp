@@ -1,4 +1,4 @@
-#include "money.h"
+#include "Money.h"
 #include <iomanip>
 
 Money::Money() { rub = 0; cheers = 0; }

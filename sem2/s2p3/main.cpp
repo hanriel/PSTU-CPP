@@ -1,4 +1,4 @@
-#include "money.h"
+#include "Money.h"
 #include <iostream>
 using namespace std;
 

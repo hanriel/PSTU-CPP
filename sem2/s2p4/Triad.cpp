@@ -1,4 +1,5 @@
-#include "triad.h"
+#include "Triad.h"
+
 using namespace std;
 
 // Constructors and destructor
@@ -17,11 +18,24 @@ int Triad::getFirst() { return first; }
 int Triad::getSecond() { return second; }
 int Triad::getThird() { return third; }
 
-Triad &Triad::operator = (const Triad &t) {
+Triad &Triad::operator=(const Triad &t) {
     if(&t == this) return *this;
     first = t.first;
     second = t.second;
     third = t.third;
+    return *this;
+}
+
+bool Triad::operator<(const Triad &t) {
+    return this->first == t.first ? this->second == t.second ? this->third < t.third :
+            this->second < t.second :
+            this->first < t.first;
+}
+
+bool Triad::operator==(const Triad &t) {
+    return this->first == t.first
+        && this->second == t.second
+        && this->third == t.third;
 }
 
 istream &operator >> (istream &in, Triad &c) {
@@ -39,15 +53,3 @@ ostream &operator << (ostream &out, Triad &c) {
     return out;
 }
 
-bool operator < (const Triad &lhs, const Triad &rhs) {
-    return lhs.first == rhs.first ? lhs.second == rhs.second ?
-            lhs.third < rhs.third :
-            lhs.second < rhs.second :
-            lhs.first < rhs.first;
-}
- 
-bool operator == (const Triad &lhs, const Triad &rhs) {
-    return lhs.first == rhs.first &&
-        lhs.second == rhs.second &&
-        lhs.third == rhs.third;
-}

@@ -1,6 +1,5 @@
 #pragma once
-
-#include "triad.h"
+#include "Triad.h"
 #include <iostream>
 using namespace std;
 

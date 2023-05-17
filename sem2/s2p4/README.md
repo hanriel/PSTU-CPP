@@ -73,17 +73,16 @@ ostream &operator << (ostream &out, Triad &c) {
     return out;
 }
 
-bool operator < (const Triad &lhs, const Triad &rhs) {
-    return lhs.first == rhs.first ? lhs.second == rhs.second ?
-            lhs.third < rhs.third :
-            lhs.second < rhs.second :
-            lhs.first < rhs.first;
+bool Triad::operator<(const Triad &t) {
+    return this->first == t.first ? this->second == t.second ? this->third < t.third :
+            this->second < t.second :
+            this->first < t.first;
 }
  
-bool operator == (const Triad &lhs, const Triad &rhs) {
-    return lhs.first == rhs.first &&
-        lhs.second == rhs.second &&
-        lhs.third == rhs.third;
+bool Triad::operator==(const Triad &t) {
+    return this->first == t.first
+        && this->second == t.second
+        && this->third == t.third;
 }
 ```
 ```
@@ -147,7 +146,30 @@ int main() {
 
 
 ## Объяснение результатов работы программы
+```
+FIRST: 12
+SECOND: 20
+THIRD: 33
 
+FIRST : 12
+SECOND : 20
+THIRD : 33
+
+FIRST : 12
+SECOND : 30
+THIRD : 45
+
+FIRST : 12
+SECOND : 30
+THIRD : 45
+Hours: 10
+Minutes: 20
+Minutes: 40
+10:20:40
+FIRST : 12
+SECOND : 30
+THIRD : 0
+```
 
 ## Ответы на контрольные вопросы
 ### 1. Для чего используется механизм наследования?

@@ -51,3 +51,5 @@ bool operator == (const Triad &lhs, const Triad &rhs) {
         lhs.second == rhs.second &&
         lhs.third == rhs.third;
 }
+
+

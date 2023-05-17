@@ -26,8 +26,8 @@ public:
 
     // Overloads
     Triad &operator=(const Triad &);
-    friend bool operator<(const Triad &, const Triad &);
-    friend bool operator==(const Triad &, const Triad &);
+    bool operator<(const Triad &);
+    bool operator==(const Triad &);
 
     // Global IN/OUT
     friend istream& operator>>(istream &in, Triad &c);

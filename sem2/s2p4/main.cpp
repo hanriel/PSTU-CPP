@@ -10,7 +10,7 @@
 */
 
 #include <iostream>
-#include "triad.h"
+#include "Triad.h"
 #include "mytime.h"
 
 using namespace std;
