@@ -1,5 +1,6 @@
 #include "Money.h"
 #include <iostream>
+
 using namespace std;
 
 /*
@@ -24,9 +25,9 @@ int main() {
     c = a - b;
 
     // вывод переменной
-    cout<<"a="<<a<<endl;
-    cout<<"b="<<b<<endl;
-    cout<<"c="<<c<<endl;
+    cout << "a=" << a << endl;
+    cout << "b=" << b << endl;
+    cout << "c=" << c << endl;
 
     return 0;
 }

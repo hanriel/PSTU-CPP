@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "point.h"
+
 using namespace std;
 
 point make_point(double x, double y) {
@@ -8,8 +9,7 @@ point make_point(double x, double y) {
     return p;
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "rus");
 
     cout << "===Определение переменных A и B====" << endl;
@@ -23,7 +23,7 @@ int main()
     cout << "B.Distance(" << A._x << ", " << A._y << ") = " << B.Distance(A._x, A._y) << endl;
 
     cout << "\n=============Указатели=============" << endl;
-    point* X = new point;
+    point *X = new point;
     X->Init(5, 6);
     X->Show();
     cout << "X.Distance(1, 1) = " << X->Distance(1, 1) << endl;
@@ -38,7 +38,7 @@ int main()
         cout << "mas[" << i << "].Distance(0, 0) = " << mas[i].Distance(0, 0) << endl;
 
     cout << "\n=======Динамические массивы========" << endl;
-    point* p_mas = new point[3];
+    point *p_mas = new point[3];
     for (int i = 0; i < 3; i++)
         p_mas[i].Read();
     for (int i = 0; i < 3; i++)

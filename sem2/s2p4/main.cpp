@@ -16,12 +16,12 @@
 using namespace std;
 
 //Функция принимает обект базавого класса как параметр
-void f1(Triad &t){
+void f1(Triad &t) {
     t.setFirst(0);
 }
 
 //Функция возвращает обект базавого класса
-Triad f2(){
+Triad f2() {
     TIME t(12, 30, 0);
     return t;
 }
@@ -34,7 +34,7 @@ int main() {
 
     Triad b(12, 30, 45);
     cout << b;
-    a=b;
+    a = b;
     cout << a;
 
     // Работа с классом TIME

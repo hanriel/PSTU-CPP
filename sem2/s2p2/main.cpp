@@ -24,8 +24,7 @@ void printEmployee(Employee e) {
     e.show();
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "rus");
 
     Employee e1;

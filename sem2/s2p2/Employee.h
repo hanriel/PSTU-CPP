@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 
@@ -6,24 +7,30 @@ using namespace std;
 
 class Employee {
 
-	string fio;
-	string post;
-	double salary;
+    string fio;
+    string post;
+    double salary;
 
 public:
-	Employee();
-	Employee(string, string, double);
-	Employee(const Employee&);
-	~Employee();
+    Employee();
 
-	string getFIO();
-	void setFIO(string);
+    Employee(string, string, double);
 
-	string getPost();
-	void setPost(string);
+    Employee(const Employee &);
 
-	double getSalary();
-	void setSalary(double);
+    ~Employee();
 
-	void show();
+    string getFIO();
+
+    void setFIO(string);
+
+    string getPost();
+
+    void setPost(string);
+
+    double getSalary();
+
+    void setSalary(double);
+
+    void show();
 };

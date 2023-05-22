@@ -4,9 +4,9 @@
 
 bool TIME::operator==(const Triad &other) {
     return (
-        this->first == other.first &&
-        this->second == other.second &&
-        this->third == other.third
+            this->first == other.first &&
+            this->second == other.second &&
+            this->third == other.third
     );
 }
 
@@ -17,8 +17,11 @@ ostream &operator<<(std::ostream &out, const TIME &t) {
 }
 
 istream &operator>>(istream &in, TIME &t) {
-    cout << "Hours: "; in >> t.first;
-    cout << "Minutes: "; in >> t.second;
-    cout << "Seconds: "; in >> t.third;
+    cout << "Hours: ";
+    in >> t.first;
+    cout << "Minutes: ";
+    in >> t.second;
+    cout << "Seconds: ";
+    in >> t.third;
     return in;
 }

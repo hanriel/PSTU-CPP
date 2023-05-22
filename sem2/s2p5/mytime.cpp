@@ -4,9 +4,9 @@
 
 bool TIME::operator==(const TIME &other) {
     return (
-        this->first == other.first &&
-        this->second == other.second &&
-        this->third == other.third
+            this->first == other.first &&
+            this->second == other.second &&
+            this->third == other.third
     );
 }
 
@@ -17,15 +17,18 @@ ostream &operator<<(std::ostream &out, const TIME &t) {
 }
 
 istream &operator>>(istream &in, TIME &t) {
-    cout << "Hours: "; in >> t.first;
-    cout << "Minutes: "; in >> t.second;
-    cout << "Minutes: "; in >> t.third;
+    cout << "Hours: ";
+    in >> t.first;
+    cout << "Minutes: ";
+    in >> t.second;
+    cout << "Minutes: ";
+    in >> t.third;
     return in;
 }
 
 void TIME::Show() {
-    cout<<"\nHOU : "<<first;
-    cout<<"\nMIN : "<<second;
-    cout<<"\nSEC : "<<third;
-    cout<<"\n";
+    cout << "\nHOU : " << first;
+    cout << "\nMIN : " << second;
+    cout << "\nSEC : " << third;
+    cout << "\n";
 }
