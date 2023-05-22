@@ -44,20 +44,29 @@ int &Array::operator[](int index) {
     else cout << "\nError! Index>size";
 }
 
-//операция для получения длины вектора
+//операция для получения длины множества
 int Array::operator()() {
-    return len();
+    return size;
 }
 
 //операции для ввода-выода
 ostream &operator<<(ostream &out, const Array &a) {
-    for (int i = 0; i < a.len(); ++i)
+    for (int i = 0; i < a.size; ++i)
         out << a.data[i] << " ";
     return out;
 }
 
 istream &operator>>(istream &in, Array &a) {
-    for (int i = 0; i < a.len(); ++i)
+    for (int i = 0; i < a.size; ++i)
         in >> a.data[i];
     return in;
+}
+
+//операция для добавления константы
+Array Array::operator+(const int k)//+k
+{
+    Array temp(size);
+    for (int i=0;i<size;++i)
+        temp.data[i]+=data[i]+k;
+    return temp;
 }

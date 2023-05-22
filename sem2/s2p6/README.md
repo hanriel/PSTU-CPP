@@ -24,26 +24,188 @@
 >
 > +n – переход вправо к элементу с номером n ( с помощью класса-итератора).
 
-## Описание класса
+## Описание класса-контейнера
+
+```c++
+// Множество
+class Array {
+public:
+explicit Array(int s, int k = 0);
+
+    Array(const Array &a);
+
+    ~Array();
+
+    Array &operator=(const Array &a);     //оператор присваивания
+    int &operator[](int index); //операция доступа по индексу
+    Array operator+(const int k);
+    int operator()(); //операция, возвращающая длину множества
+    friend ostream &operator<<(ostream &out, const Array &a); //перегруженные операции ввода-вывода
+    friend istream &operator>>(istream &in, Array &a);
+
+    Iterator first() { return beg; }//возвращает указатель на первый элемент
+    Iterator last() { return end; }//возвращает указатель на элемент следующий за
+private:
+int size;//размер множества
+int *data;//укзатель на динамический массив значений множества
+Iterator beg;//указатель на первый элемент множества
+Iterator end;//указатель на элемент следующий за последним
+};
+```
 
 ## Определение компонентных функций
 
-## Определение глобальных функций
+```c++
+Array::Array(int s, int k) {
+    size = s;
+    data = new int[size];
+    for (int i = 0; i < size; i++)
+        data[i] = k;
+    beg.elem = &data[0];
+    end.elem = &data[size];
+}
 
+//конструктор копирования
+Array::Array(const Array &a) {
+    size = a.size;
+    data = new int[size];
+    for (int i = 0; i < size; i++)
+        data[i] = a.data[i];
+    beg = a.beg;
+    end = a.end;
+}
+
+//деструктор
+Array::~Array() {
+    delete[]data;
+    data = 0;
+}
+
+//операция присваивания
+Array &Array::operator=(const Array &a) {
+    if (this == &a)return *this;
+    size = a.size;
+    if (data != 0) delete[]data;
+    data = new int[size];
+    for (int i = 0; i < size; i++)
+        data[i] = a.data[i];
+    beg = a.beg;
+    end = a.end;
+    return *this;
+}
+
+//операция доступа по индексу
+int &Array::operator[](int index) {
+    if (index < size) return data[index];
+    else cout << "\nError! Index>size";
+}
+
+//операция для получения длины множества
+int Array::operator()() {
+    return size;
+}
+
+//операции для ввода-выода
+ostream &operator<<(ostream &out, const Array &a) {
+    for (int i = 0; i < a.size; ++i)
+        out << a.data[i] << " ";
+    return out;
+}
+
+istream &operator>>(istream &in, Array &a) {
+    for (int i = 0; i < a.size; ++i)
+        in >> a.data[i];
+    return in;
+}
+
+//операция для добавления константы
+Array Array::operator+(const int k)//+k
+{
+    Array temp(size);
+    for (int i=0;i<size;++i)
+        temp.data[i]+=data[i]+k;
+    return temp;
+}
 ```
 
+## Описание класса-итератора и его компонентных функций
+
+```c++
+class Iterator {
+    friend class Array;                     //дружественный класс
+public:
+    Iterator() { elem = nullptr; }               //конструктор без параметров
+    Iterator(const Iterator &it) { elem = it.elem; }//конструктор копирования
+    //перегруженные операции сравнения
+    bool operator==(const Iterator &it) { return elem == it.elem; }
+    bool operator!=(const Iterator &it) { return elem != it.elem; };
+
+    void operator++(int) { ++elem; };            //перегруженная операция инкремент
+    void operator--(int) { --elem; }              //перегруженная операция декремент
+    int &operator*() const { return *elem; }  //перегруженная операция разыменования
+private:
+    int *elem;                               //указатель на элемент типа int
+};
 ```
 
 ## Функция main()
 
-```
-
+```c++
+int main() {
+    Array a(5);         //создали множество из 5 элементов, заполненный нулями
+    cout << a << "\n";      //вывели значения элементов множества
+    cin >> a;             //ввели с клавиатуры значения элементов множества
+    cout << a << "\n";      //вывели значения элементов множества
+    a[2] = 100;           //используя операцию [] присвоили новое значение элементу
+    cout << a << "\n";      //вывели значения элементов множества
+    Array b(10);        //создали множество b из 10 элементов, заполненный нулями
+    cout << b << "\n";      //вывели значения элементов множества
+    b = a;                //присвоили множеству b значения множества a
+    cout << b << "\n";      //вывели значения элементов множества
+    Array c(10);        //создали множество c из 10 элементов, заполненный нулями
+    c = b + 100;            //Увеличили значения множества b на 100 и присвоили множеству c
+    cout << c << "\n";      //вывели значения элементов множества c
+    cout << "\nthe length of a=" << a() << endl;//вывели длину множества a
+    //разыменовываем значение, которое возвращает a.first() и выводим его
+    cout << *(a.first()) << endl;
+    //переменную типа Iterator устанавливаем на первый элемент множества а с
+    //помощью метода first
+    Iterator i = a.first();
+    //оперция инкремент
+    i++;
+    //разыменовываеи итератор и выводи его значение
+    cout << *i << endl;
+    //выводим значения элеменов множества с помощью итератора
+    for (i = a.first(); i != a.last(); i++)cout << *i << endl;
+    return 0;
+}
 ```
 
 ## Объяснение результатов работы программы
 
 ```
+<< 0 0 0 0 0 
+>> 0
+>> 0
+>> 0
+>> 0
+>> 0
+<< 0 0 0 0 0 
+<< 0 0 100 0 0 
+<< 0 0 0 0 0 0 0 0 0 0 
+<< 0 0 100 0 0 
+<< 100 100 200 100 100 
+<< 
+<< the length of a=5
+<< 0
+<< 0
+<< 0
+<< 0
+<< 100
+<< 0
+<< 0
 
+Process finished with exit code 0
 ```
 
 ## Ответы на контрольные вопросы

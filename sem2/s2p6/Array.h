@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 class Iterator {
     friend class Array;                     //дружественный класс
 public:
@@ -15,8 +14,8 @@ public:
 
     bool operator!=(const Iterator &it) { return elem != it.elem; };
 
-    void operator++() { ++elem; };            //перегруженная операция инкремент
-    void operator--() { --elem; }              //перегруженная операция декремент
+    void operator++(int) { ++elem; };            //перегруженная операция инкремент
+    void operator--(int) { --elem; }              //перегруженная операция декремент
     int &operator*() const { return *elem; }  //перегруженная операция разыменования
 private:
     int *elem;                               //указатель на элемент типа int
@@ -33,15 +32,16 @@ public:
 
     Array &operator=(const Array &a);     //оператор присваивания
     int &operator[](int index); //операция доступа по индексу
-    int operator()(); //операция, возвращающая длину вектора
+    Array operator+(const int k);
+    int operator()(); //операция, возвращающая длину множества
     friend ostream &operator<<(ostream &out, const Array &a); //перегруженные операции ввода-вывода
     friend istream &operator>>(istream &in, Array &a);
 
     Iterator first() { return beg; }//возвращает указатель на первый элемент
     Iterator last() { return end; }//возвращает указатель на элемент следующий за
 private:
-    int size;//размер вектора
-    int *data;//укзатель на динамический массив значений вектора
-    Iterator beg;//указатель на первый элемент вектора
+    int size;//размер множества
+    int *data;//укзатель на динамический массив значений множества
+    Iterator beg;//указатель на первый элемент множества
     Iterator end;//указатель на элемент следующий за последним
 };
