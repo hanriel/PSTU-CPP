@@ -29,7 +29,7 @@
 
 ## Определение глобальных функций
 
-```
+```c++
 bool TIME::operator==(const TIME &other) {
     return (
         this->first == other.first &&
@@ -43,7 +43,7 @@ bool TIME::operator!=(const TIME &other) { return !(*this == other); }
 
 ## Функция main()
 
-```
+```c++
 int main() {
     Array v(5); // Вектор из 5 элементов
 
@@ -65,7 +65,7 @@ int main() {
 
 ## Объяснение результатов работы программы
 
-```
+```c++
 FIRST: 10
 SECOND: 20
 THIRD: 30
