@@ -41,6 +41,7 @@ int main() {
     int del;
     printf("Номер карты которую необходимо удалить=");
     scanf("%d", &del);
+    delRecord("f.dat",del);
 
     printFile("f2.dat");
 }
