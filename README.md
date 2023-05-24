@@ -28,7 +28,7 @@
 | [2. Классы и объекты. Использование конструкторов.](../main/sem2/s2p2)       | :white_check_mark: | :white_check_mark: |
 | [3. Перегрузка операций](../main/sem2/s2p3)                                  | :white_check_mark: | :white_check_mark: |
 | [4. Простое наследование. Принцип подстановки.](../main/sem2/s2p4)           | :white_check_mark: | :white_check_mark: |
-| [5. Наследование. Виртуальные функции. Полиморфизм.](../main/sem2/s2p5)      | :white_check_mark: |        :x:         |
+| [5. Наследование. Виртуальные функции. Полиморфизм.](../main/sem2/s2p5)      | :white_check_mark: | :white_check_mark: |
 | [6. АТД. Контейнеры](../main/sem2/s2p6)                                      | :white_check_mark: |        :x:         |
 | [7. Шаблоны классов](../main/sem2/s2p7)                                      | :white_check_mark: |        :x:         |
 | [8. Программа, управляемая событиями](../main/sem2/s2p8)                     |        :x:         |        :x:         |
