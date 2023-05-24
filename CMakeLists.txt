@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.0.0)
 
 project(PNUPU-CPP VERSION 0.1.0)
 
+add_subdirectory(sem1/s1p1)
+add_subdirectory(sem1/s1p2)
+add_subdirectory(sem1/s1p3)
+add_subdirectory(sem1/s1p4)
+add_subdirectory(sem1/s1p5)
+add_subdirectory(sem1/s1p6)
+add_subdirectory(sem1/s1p7v1)
+add_subdirectory(sem1/s1p7v2)
+add_subdirectory(sem1/s1p8)
+
 add_subdirectory(sem2/s2p1)
 add_subdirectory(sem2/s2p2)
 add_subdirectory(sem2/s2p3)
