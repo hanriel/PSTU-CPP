@@ -173,3 +173,6 @@ struct TEvent {
 ### 20. Для чего используется функция Valid()?
 
 **Ответ:**
+
+---
+Лабораторная работа доступна в GitHub репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)

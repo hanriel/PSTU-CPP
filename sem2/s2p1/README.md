@@ -410,6 +410,6 @@ s->name = "John";
 ```
 
 ---
-Лабораторная работа доступна в репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)
+Лабораторная работа доступна в GitHub репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)
 
 [uml-diagram]: ./assets/s2p1.svg "UML Diagram"

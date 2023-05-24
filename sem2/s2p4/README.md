@@ -424,4 +424,8 @@ Teacher x;
 
 **Ответ:** 
 
+---
+Лабораторная работа доступна в GitHub репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)
+
+
 [uml-diagram]: ./assets/uml-diagram.svg "UML Diagram"

@@ -283,3 +283,6 @@ Process finished with exit code 0
 
 **Ответ:** 
 
+---
+Лабораторная работа доступна в GitHub репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)
+
