@@ -50,4 +50,6 @@ int main() {
     cout << B << endl;
 
     return 0;
+
+    // TODO Отчет 7 лаба
 }

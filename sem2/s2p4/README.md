@@ -33,6 +33,9 @@
 
 ## Описание класса
 
+[//]: # (TODO Добавить описание класса)
+
+![UML-Diagram][uml-diagram]
 
 ## Определение компонентных функций
 
@@ -403,6 +406,8 @@ Teacher x;
 - post (из класса Employee)
 - stage (из класса Teacher)
 
+[//]: # (TODO Доответить на контрольные вопросы)
+
 ### 17. Для классов Student, Employee и Teacher написать конструкторы без параметров.
 
 **Ответ:**
@@ -418,3 +423,5 @@ Teacher x;
 ### 20. Для классов Student, Employee и Teacher определить операцию присваивания.
 
 **Ответ:** 
+
+[uml-diagram]: ./assets/uml-diagram.svg "UML Diagram"

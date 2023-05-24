@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 
-struct frict
-{
+struct frict {
     int a;
     int b;
 };

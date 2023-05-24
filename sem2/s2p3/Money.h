@@ -23,7 +23,7 @@ public:
 
     void setRub(long r);
 
-    void setCheers(long c);
+    void setCheers(int c);
 
     //перегруженные операции
     Money &operator=(const Money &);

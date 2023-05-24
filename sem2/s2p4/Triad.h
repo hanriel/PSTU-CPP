@@ -11,20 +11,20 @@ public:
     int second;
     int third;
 
-    Triad(void);
+    Triad();
 
     Triad(int, int, int);
 
     Triad(const Triad &);
 
-    virtual ~Triad(void);
+    virtual ~Triad();
 
     // Getters
-    int getFirst();
+    int getFirst() const;
 
-    int getSecond();
+    int getSecond() const;
 
-    int getThird();
+    int getThird() const;
 
     // Setters
     void setFirst(int);
@@ -36,9 +36,9 @@ public:
     // Overloads
     Triad &operator=(const Triad &);
 
-    bool operator<(const Triad &);
+    bool operator<(const Triad &) const;
 
-    bool operator==(const Triad &);
+    bool operator==(const Triad &) const;
 
     // Global IN/OUT
     friend istream &operator>>(istream &in, Triad &c);

@@ -392,4 +392,7 @@ char* studentName = s->name;
 s->name = "John";
 ```
 
+---
+Лабораторная работа доступна в репозитории [hanriel/PSTU-CPP](github.com/hanriel/PSTU-CPP/)
+
 [uml-diagram]: ./assets/s2p1.svg "UML Diagram"

@@ -25,7 +25,7 @@ int Money::getCheers() { return cheers; }
 
 void Money::setRub(long r) { rub = r; }
 
-void Money::setCheers(long c) { cheers = c; }
+void Money::setCheers(int c) { cheers = c; }
 
 // перегрузка операции присваивания
 Money &Money::operator=(const Money &m) {

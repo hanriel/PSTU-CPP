@@ -3,7 +3,7 @@
 using namespace std;
 
 // Constructors and destructor
-Triad::Triad(void) {
+Triad::Triad() {
     first = 0;
     second = 0;
     third = 0;
@@ -21,7 +21,7 @@ Triad::Triad(const Triad &triad) {
     third = triad.third;
 }
 
-Triad::~Triad(void) {}
+Triad::~Triad() = default;
 
 // Setters
 void Triad::setFirst(int f) { first = f; }
@@ -31,11 +31,11 @@ void Triad::setSecond(int s) { second = s; }
 void Triad::setThird(int t) { third = t; }
 
 // Getters
-int Triad::getFirst() { return first; }
+int Triad::getFirst() const { return first; }
 
-int Triad::getSecond() { return second; }
+int Triad::getSecond() const { return second; }
 
-int Triad::getThird() { return third; }
+int Triad::getThird() const { return third; }
 
 Triad &Triad::operator=(const Triad &t) {
     if (&t == this) return *this;
@@ -45,13 +45,13 @@ Triad &Triad::operator=(const Triad &t) {
     return *this;
 }
 
-bool Triad::operator<(const Triad &t) {
+bool Triad::operator<(const Triad &t) const {
     return this->first == t.first ? this->second == t.second ? this->third < t.third :
                                     this->second < t.second :
            this->first < t.first;
 }
 
-bool Triad::operator==(const Triad &t) {
+bool Triad::operator==(const Triad &t) const {
     return this->first == t.first
            && this->second == t.second
            && this->third == t.third;

@@ -347,4 +347,4 @@ Student a,b;
 Каким образом, компилятор будет воспринимать вызов функции-операции?
 **Ответ:**
 
-[uml-diagram]: ./assets/s2p3.svg "UML Diagram"
+[uml-diagram]: ./assets/uml-diagram.svg "UML Diagram"

@@ -24,9 +24,6 @@ int main() {
     // разность
     c = a - b;
 
-    //TODO Не равно и равно
-    // TODO UML
-
     // вывод переменной
     cout << "a=" << a << endl;
     cout << "b=" << b << endl;

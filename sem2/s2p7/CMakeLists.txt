@@ -4,7 +4,7 @@ project(s2p7 VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(s2p7 main.cpp Money.cpp ../s2p8/main.cpp)
+add_executable(s2p7 main.cpp Money.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

@@ -25,7 +25,46 @@
 
 ## Описание класса
 
+```c++
+class TIME : public Triad {
+public:
+    using Triad::Triad;
+
+    void Show();//функция для просмотра атрибутов класса с помощью указателя
+    bool operator==(const TIME &);
+
+    bool operator!=(const TIME &);
+
+    friend ostream &operator<<(ostream &, const TIME &);
+
+    friend istream &operator>>(istream &, TIME &);
+};
+```
+
 ## Определение компонентных функций
+
+```c++
+ostream &operator<<(std::ostream &out, const TIME &t) {
+    return out << t.first << ':' << t.second << ':' << t.third;
+}
+
+istream &operator>>(istream &in, TIME &t) {
+    cout << "Hours: ";
+    in >> t.first;
+    cout << "Minutes: ";
+    in >> t.second;
+    cout << "Minutes: ";
+    in >> t.third;
+    return in;
+}
+
+void TIME::Show() {
+    cout << "\nHOU : " << first;
+    cout << "\nMIN : " << second;
+    cout << "\nSEC : " << third;
+    cout << "\n";
+}
+```
 
 ## Определение глобальных функций
 
