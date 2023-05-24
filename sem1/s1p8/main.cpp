@@ -10,19 +10,24 @@
 
 #define N 3 //Первоначлаьный размер массива
 
-typedef struct PATIENT {
-    char* fio[128];
-    char* address[40];
+struct PATIENT {
+    char *fio[128];
+    char *address[40];
     int card;
     int snils;
 };
 
-void printFile(std::string);
+void printFile(const std::string &);
+
 void writePatientFile(std::string, PATIENT);
-void writeFile(std::string, PATIENT*);
+
+void writeFile(const std::string &, PATIENT *);
+
 PATIENT createPatient();
-void createStructFile(std::string);
-void delRecord(std::string, int);
+
+void createStructFile(const std::string &);
+
+void delRecord(const std::string &, int);
 
 int main() {
     setlocale(LC_ALL, "rus");
@@ -31,20 +36,20 @@ int main() {
     createStructFile("f.dat");
     //Выводим файл
     printFile("f.dat");
-    
+
     //Удаляем заданную карту
     int del;
     printf("Номер карты которую необходимо удалить=");
-    scanf_s("%d", &del);
+    scanf("%d", &del);
 
     printFile("f2.dat");
 }
 
-void printFile(std::string file_name) {
-    FILE* _file;
-    PATIENT _buffer;
+void printFile(const std::string &file_name) {
+    FILE *_file;
+    PATIENT _buffer{};
 
-    if (fopen_s(&_file, file_name.c_str(), "rb")) exit(3);
+    if ((_file = fopen(file_name.c_str(), "rb")) == nullptr) exit(3);
     printf("Содержимое файла %s:\n", file_name.c_str());
 
     while (fread(&_buffer, sizeof(struct PATIENT), 1, _file) == 1) {
@@ -54,27 +59,31 @@ void printFile(std::string file_name) {
     fclose(_file);
 }
 
-void writeFile(std::string file_name, PATIENT* buffer) {
-    FILE* _file;
-    if (fopen_s(&_file, file_name.c_str(), "wb+")) exit(1); // если при открытии файла возникает 
+void writeFile(const std::string &file_name, PATIENT *buffer) {
+    FILE *_file;
+    if ((_file = fopen(file_name.c_str(), "wb+")) == nullptr) exit(1); // если при открытии файла возникает
     fwrite(&buffer, sizeof(PATIENT), 1, _file);
     if (~ferror(_file) == NULL) exit(2);
     fclose(_file);
 }
 
 PATIENT createPatient() {
-    PATIENT _buffer;
-    printf("fio=");     scanf_s("%s", &_buffer.fio, 128);
-    printf("address="); scanf_s("%s", &_buffer.address, 40);
-    printf("card=");    scanf_s("%d", &_buffer.card);
-    printf("snils=");   scanf_s("%d", &_buffer.snils);
+    PATIENT _buffer{};
+    printf("fio=");
+    scanf("%s", &_buffer.fio, 128);
+    printf("address=");
+    scanf("%s", &_buffer.address, 40);
+    printf("card=");
+    scanf("%d", &_buffer.card);
+    printf("snils=");
+    scanf("%d", &_buffer.snils);
     return _buffer;
 }
 
-void createStructFile(std::string file_name) {
-    PATIENT _buffer;
-    FILE* _file;
-    if (fopen_s(&_file, file_name.c_str(), "wb+")) exit(1);
+void createStructFile(const std::string &file_name) {
+    PATIENT _buffer{};
+    FILE *_file;
+    if ((_file = fopen(file_name.c_str(), "wb+")) == nullptr) exit(1);
     printf("Формирование структуры %s:\n", file_name.c_str());
     for (int i = 0; i <= N - 1; i++) {
         _buffer = createPatient();
@@ -84,12 +93,20 @@ void createStructFile(std::string file_name) {
     fclose(_file);
 }
 
-void delRecord(std::string file_name, int card) {
-    FILE* f;            // указатель связанный с файлом
-    if (fopen_s(&f, "f2.dat", "wb+")) exit(4); // если при открытии файла возникает 
-    for (PATIENT val : mas) {
-        if (val.card == del) continue;
-        fwrite(&val, sizeof(PATIENT), 1, f);
+void delRecord(const std::string &file_name, int card) {
+    FILE *_file;            // указатель связанный с файлом
+    PATIENT arr[N];
+    PATIENT _buffer{};
+
+    //if ((_file = fopen(file_name.c_str(), "rb")) == nullptr) exit(3);
+    //while (fread(&_buffer, sizeof(struct PATIENT), 1, _file) == 1) {
+    //    arr[] _buffer.fio, _buffer.address, _buffer.card, _buffer.snils);
+    //}
+
+    if ((_file = fopen("f2.dat", "wb+")) == nullptr) exit(4); // если при открытии файла возникает
+    for (PATIENT val : arr) {
+        if (val.card == card) continue;
+        fwrite(&val, sizeof(PATIENT), 1, _file);
     }
-    fclose(f);
+    fclose(_file);
 }

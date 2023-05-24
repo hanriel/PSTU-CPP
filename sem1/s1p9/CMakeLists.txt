@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(s2p8 VERSION 0.1.0)
+project(s1p9 VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
 
-add_executable(s2p8 main.cpp OBJECT.cpp BOOK.cpp PRINT.cpp)
+add_executable(s1p9 main.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

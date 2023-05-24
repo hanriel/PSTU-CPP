@@ -15,8 +15,8 @@
 | [6. Строки](../main/sem1/s1p6)                                                            | :white_check_mark: | :yellow_circle: |
 | [7.1. Перегрузка функций в Си++](../main/sem1/s1p7v1)                                     | :white_check_mark: | :yellow_circle: |
 | [7.2. Функции с переменным числом параметров](../main/sem1/s1p7v2)                        | :white_check_mark: | :yellow_circle: |
-| [8. Блоковый ввод-вывод](../main/sem1/s1p8)                                               |        :x:         |       :x:       |
-| [9. Строковый ввод-вывод](../main/sem1/s1p9)                                              |        :x:         |       :x:       |
+| [8. Блоковый ввод-вывод](../main/sem1/s1p8)                                               | :white_check_mark: |       :x:       |
+| [9. Строковый ввод-вывод](../main/sem1/s1p9)                                              | :white_check_mark: |       :x:       |
 | [10. Динамические массивы](../main/sem1/s1p10)                                            |        :x:         |       :x:       |
 | [11. Информационные динамические структуры](../main/sem1/s1p11)                           |        :x:         |       :x:       |
 

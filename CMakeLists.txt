@@ -11,6 +11,7 @@ add_subdirectory(sem1/s1p6)
 add_subdirectory(sem1/s1p7v1)
 add_subdirectory(sem1/s1p7v2)
 add_subdirectory(sem1/s1p8)
+add_subdirectory(sem1/s1p9)
 
 add_subdirectory(sem2/s2p1)
 add_subdirectory(sem2/s2p2)
