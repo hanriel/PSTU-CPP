@@ -18,9 +18,9 @@ public:
 
     Triad(const Triad &);
 
-    virtual ~Triad(void);
+    virtual ~Triad();
 
-    void Show();
+    void Show() override;
 
     // Getters
     int getFirst();

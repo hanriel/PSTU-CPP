@@ -10,7 +10,7 @@ class TIME : public Triad {
 public:
     using Triad::Triad;
 
-    void Show();//функция для просмотра атрибутов класса с помощью указателя
+    void Show() override;//функция для просмотра атрибутов класса с помощью указателя
     bool operator==(const TIME &);
 
     bool operator!=(const TIME &);
