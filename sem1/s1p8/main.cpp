@@ -1,14 +1,14 @@
 ﻿#include <iostream>
 #include <string>
 
-//Струткура ошибок
+// Структура ошибок
 // ERR 1 = 
 // ERR 2 = 
 // ERR 3 = Ошибка чтения для вывода
 // ERR 4 = 
 // ERR 5 = 
 
-#define N 3 //Первоначлаьный размер массива
+#define N 3 //Первоначальный размер массива
 
 struct PATIENT {
     char *fio[128];

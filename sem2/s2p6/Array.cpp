@@ -51,7 +51,7 @@ int Array::operator()() {
     return size;
 }
 
-//операции для ввода-выода
+//операции для ввода-вывода
 ostream &operator<<(ostream &out, const Array &a) {
     for (int i = 0; i < a.size; ++i)
         out << a.data[i] << " ";

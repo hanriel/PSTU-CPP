@@ -6,25 +6,25 @@
 
 BOOK::BOOK() : PRINT() {
     pages = 0;
-    izdat = "";
+    publisher = "";
 }
 
 BOOK::~BOOK() {}
 
-BOOK::BOOK(const string& _name, const string& _author, int _pages, const string& _izdat) : PRINT(_name, _author) {
+BOOK::BOOK(const string& _name, const string& _author, int _pages, const string& _publisher) : PRINT(_name, _author) {
     pages = _pages;
-    izdat = _izdat;
+    publisher = _publisher;
 }
 
 BOOK::BOOK(const BOOK &L) {
     name = L.name;
     author= L.author;
     pages = L.pages;
-    izdat = L.izdat;
+    publisher = L.publisher;
 }
 
-void BOOK::Set_pages(int G) { pages = G; }
-void BOOK::Set_izdat(string G) { izdat = std::move(G); }
+void BOOK::setPages(int G) { pages = G; }
+void BOOK::setPublisher(string) { publisher = std::move(G); }
 
 
 BOOK &BOOK::operator=(const BOOK &book) {
@@ -32,7 +32,7 @@ BOOK &BOOK::operator=(const BOOK &book) {
     name = book.name;
     author= book.author;
     pages = book.pages;
-    izdat = book.izdat;
+    publisher = book.publisher;
     return *this;
 }
 
@@ -40,7 +40,7 @@ void BOOK::Show() {
     cout << "\nNAME : " << name;
     cout << "\nAUTHOR : " << author;
     cout << "\nPAGES : " << pages;
-    cout << "\nIZDATEL : " << izdat;
+    cout << "\nPUBLISHER : " << publisher;
     cout << "\n";
 }
 
@@ -51,8 +51,8 @@ void BOOK::Input() {
     cin >> author;
     cout << "\nPages:";
     cin >> pages;
-    cout << "\nIzdatel: ";
-    cin >> izdat;
+    cout << "\nPublisher: ";
+    cin >> publisher;
 }
 
 

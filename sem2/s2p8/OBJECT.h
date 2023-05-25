@@ -2,8 +2,8 @@
 // Created by hanriel on 5/24/23.
 //
 
-#ifndef PNUPU_CPP_OBJECT_H
-#define PNUPU_CPP_OBJECT_H
+#ifndef PSTU_CPP_OBJECT_H
+#define PSTU_CPP_OBJECT_H
 
 class Object {
 public:
@@ -16,4 +16,4 @@ public:
     virtual ~Object();
 };
 
-#endif //PNUPU_CPP_OBJECT_H
+#endif //PSTU_CPP_OBJECT_H

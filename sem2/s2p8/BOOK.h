@@ -8,14 +8,13 @@
 
 using namespace std;
 
-#ifndef PNUPU_CPP_BOOK_H
-#define PNUPU_CPP_BOOK_H
+#ifndef PSTU_CPP_BOOK_H
+#define PSTU_CPP_BOOK_H
 
 
 class BOOK : public PRINT {
     int pages;
-    string izdat;
-    //group;
+    string publisher;
 public:
     BOOK();
 
@@ -25,20 +24,20 @@ public:
 
     BOOK(const BOOK &);
 
-    BOOK(const string&, const string& , int, const string&);
+    BOOK(const string &, const string &, int, const string &);
 
     ~BOOK() override;
 
-    int Get_pages() const { return pages; }
+    int getPages() const { return pages; }
 
-    string Get_izdat() { return izdat; }
+    string getPublisher() { return publisher; }
 
-    void Set_pages(int);
+    void setPages(int);
 
-    void Set_izdat(string);
+    void setPublisher(string);
 
     BOOK &operator=(const BOOK &);
 };
 
 
-#endif //PNUPU_CPP_BOOK_H
+#endif //PSTU_CPP_BOOK_H

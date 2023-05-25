@@ -23,7 +23,7 @@ int main()
     if (check(line))
         cout << "Данная строка палиндром\n";
     else
-        cout << "Не полендром\n";
+        cout << "Не палиндром\n";
    
     system("pause");
 }

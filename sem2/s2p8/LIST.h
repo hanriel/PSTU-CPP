@@ -2,8 +2,8 @@
 // Created by hanriel on 5/25/23.
 //
 
-#ifndef PNUPU_CPP_LIST_H
-#define PNUPU_CPP_LIST_H
+#ifndef PSTU_CPP_LIST_H
+#define PSTU_CPP_LIST_H
 
 
 class LIST {
@@ -11,4 +11,4 @@ class LIST {
 };
 
 
-#endif //PNUPU_CPP_LIST_H
+#endif //PSTU_CPP_LIST_H

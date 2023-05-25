@@ -8,8 +8,8 @@
 
 using namespace std;
 
-#ifndef PNUPU_CPP_PRINT_H
-#define PNUPU_CPP_PRINT_H
+#ifndef PSTU_CPP_PRINT_H
+#define PSTU_CPP_PRINT_H
 
 
 class PRINT : public Object {
@@ -41,4 +41,4 @@ public:
 };
 
 
-#endif //PNUPU_CPP_PRINT_H
+#endif //PSTU_CPP_PRINT_H

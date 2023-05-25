@@ -45,7 +45,7 @@ void Employee::setPost(string _post) { post = _post; }
 
 void Employee::setSalary(double _salary) { salary = _salary; }
 
-// Метод для просмтра атрибутов
+// Метод для просмотра атрибутов
 void Employee::show() {
     cout << "" << fio << endl;
     cout << "" << post << endl;

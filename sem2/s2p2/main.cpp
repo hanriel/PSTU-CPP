@@ -2,7 +2,7 @@
 #include <string>
 #include "Employee.h"
 
-// Функция для возврата обекта как результата
+// Функция для возврата объекта как результата
 Employee makeEmployee() {
     string fio;
     string post;

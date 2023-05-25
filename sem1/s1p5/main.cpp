@@ -2,7 +2,7 @@
 
 const int len = 3;
 
-int mtrixSum(int n, int **a) {
+int matrixSum(int n, int **a) {
     int sum = 0;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++) 
@@ -29,7 +29,7 @@ int main()
         std::cout << std::endl;
     }
 
-    int s = mtrixSum(len, matrix);
+    int s = matrixSum(len, matrix);
 
     std::cout << s;
 

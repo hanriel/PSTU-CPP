@@ -53,7 +53,7 @@ int main() {
     }
     in.close();
 
-    cout << "Самое длиная слово в F2: " << word;
+    cout << "Самое длинное слово в F2: " << word;
 
     return 0;
 }
