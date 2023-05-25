@@ -19,13 +19,15 @@ class BOOK : public PRINT {
 public:
     BOOK();
 
-    void Show();
+    void Show() override;
 
-    void Input();
-
-    BOOK(string, int, int, int);
+    void Input() override;
 
     BOOK(const BOOK &);
+
+    BOOK(const string&, const string& , int, const string&);
+
+    ~BOOK() override;
 
     int Get_pages() const { return pages; }
 

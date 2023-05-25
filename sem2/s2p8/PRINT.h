@@ -31,12 +31,10 @@ public:
 
     //селекторы
     string Get_name() { return name; }
-
     string Get_author() { return author; }
 
     //модификаторы
     void Set_name(string);
-
     void Set_author(string);
 
     PRINT &operator=(const PRINT &);//перегрузка операции присваивания

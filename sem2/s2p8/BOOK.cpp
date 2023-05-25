@@ -9,11 +9,11 @@ BOOK::BOOK() : PRINT() {
     izdat = "";
 }
 
-BOOK::~BOOK() = default;
+BOOK::~BOOK() {}
 
-BOOK::BOOK(const string& N, const string& A, int P, string I) : PRINT(N, A) {
-    pages = P;
-    izdat = I
+BOOK::BOOK(const string& _name, const string& _author, int _pages, const string& _izdat) : PRINT(_name, _author) {
+    pages = _pages;
+    izdat = _izdat;
 }
 
 BOOK::BOOK(const BOOK &L) {
@@ -23,38 +23,37 @@ BOOK::BOOK(const BOOK &L) {
     izdat = L.izdat;
 }
 
-void BOOK::Set_pages(int G) {
-    pages = G;
-}
-
-void BOOK::Set_izdat(string G) {
-    izdat = G;
-}
+void BOOK::Set_pages(int G) { pages = G; }
+void BOOK::Set_izdat(string G) { izdat = std::move(G); }
 
 
-BOOK &BOOK::operator=(const BOOK &l) {
-    if (&l == this)return *this;
-    mark = l.mark;
-    power = l.power;
-    cyl = l.cyl;
+BOOK &BOOK::operator=(const BOOK &book) {
+    if (&book == this) return *this;
+    name = book.name;
+    author= book.author;
+    pages = book.pages;
+    izdat = book.izdat;
     return *this;
 }
 
 void BOOK::Show() {
-    cout << "\nMARK : " << mark;
-    cout << "\nCYL : " << cyl;
-    cout << "\nPOWER : " << power;
-    cout << "\nGRUZ : " << gruz;
+    cout << "\nNAME : " << name;
+    cout << "\nAUTHOR : " << author;
+    cout << "\nPAGES : " << pages;
+    cout << "\nIZDATEL : " << izdat;
     cout << "\n";
 }
 
 void BOOK::Input() {
-    cout << "\nMark:";
-    cin >> mark;
-    cout << "\nPower:";
-    cin >> power;
-    cout << "\nCyl:";
-    cin >> cyl;
-    cout << "\nGRUZ : ";
-    cin >> gruz;
+    cout << "\nName:";
+    cin >> name;
+    cout << "\nAuthor:";
+    cin >> author;
+    cout << "\nPages:";
+    cin >> pages;
+    cout << "\nIzdatel: ";
+    cin >> izdat;
 }
+
+
+
