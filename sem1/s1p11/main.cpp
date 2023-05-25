@@ -13,14 +13,14 @@ struct point {
 };
 
 point *make_point(int n) {
-    auto* head = new point;
+    auto *head = new point;
     cout << "Введите значение: ";
     cin >> head->key;
     head->prev = nullptr;
     head->next = nullptr;
-    point* curr = head;
+    point *curr = head;
     for (int i = 2; i <= n; i++) {
-        auto* newNode = new point;
+        auto *newNode = new point;
         cout << "Введите значение: ";
         cin >> newNode->key;
         newNode->prev = curr;
@@ -57,15 +57,15 @@ point *delete_element(point *head, int k, int number) {
         return head;
     }
 
-    point* temp = head;
-    for (int i = 1; i < number-k && temp != nullptr; i++) {
+    point *temp = head;
+    for (int i = 1; i < number - k && temp != nullptr; i++) {
         temp = temp->next;
     }
     if (temp == nullptr) {
         cout << "Неверная позиция.\n";
         return nullptr;
     }
-    point* delNode = temp->next;
+    point *delNode = temp->next;
     for (int i = 0; i < k && delNode != nullptr; i++) {
         delNode = delNode->next;
         delete temp->next;
@@ -86,7 +86,7 @@ point *add_elements(point *head, int k) {
 
     point *curr = get_last(head);
     for (int i = 0; i < k; i++) { // добавление K элементов к концу массива
-        auto* newNode = new point;
+        auto *newNode = new point;
         cout << "Введите значение: ";
         cin >> newNode->key;
         newNode->prev = curr;

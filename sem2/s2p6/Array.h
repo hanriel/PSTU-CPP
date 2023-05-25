@@ -33,6 +33,7 @@ public:
     Array &operator=(const Array &a);     //оператор присваивания
     int &operator[](int index); //операция доступа по индексу
     Array operator+(const int k);
+
     int operator()(); //операция, возвращающая длину множества
     friend ostream &operator<<(ostream &out, const Array &a); //перегруженные операции ввода-вывода
     friend istream &operator>>(istream &in, Array &a);

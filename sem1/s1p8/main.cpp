@@ -41,7 +41,7 @@ int main() {
     int del;
     printf("Номер карты которую необходимо удалить=");
     scanf("%d", &del);
-    delRecord("f.dat",del);
+    delRecord("f.dat", del);
 
     printFile("f2.dat");
 }
@@ -105,7 +105,7 @@ void delRecord(const std::string &file_name, int card) {
     //}
 
     if ((_file = fopen("f2.dat", "wb+")) == nullptr) exit(4); // если при открытии файла возникает
-    for (PATIENT val : arr) {
+    for (PATIENT val: arr) {
         if (val.card == card) continue;
         fwrite(&val, sizeof(PATIENT), 1, _file);
     }

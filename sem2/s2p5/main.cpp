@@ -21,5 +21,5 @@ int main() {
     cout << v;
     return 0;
 
-   // TODO Отчет 5 лаба
+    // TODO Отчет 5 лаба
 }

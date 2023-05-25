@@ -13,12 +13,15 @@ int NOD(int x, int y) {
 double sum_des(float a, float b) {
     return a + b;
 }
+
 double sum_des(float a, double b) {
     return a + b;
 }
+
 double sum_des(double a, float b) {
     return a + b;
 }
+
 double sum_des(double a, double b) {
     return a + b;
 }
@@ -29,6 +32,7 @@ frict sum_f(int a, int b, int c, int d) {
     dr.b = b * d;
     return dr;
 }
+
 frict sum_f(frict a, frict b) {
     frict dr;
     dr.a = a.a * b.b + b.a * a.b;
@@ -58,5 +62,5 @@ int main() {
     frict f = sum_f(a, b, c, d);
     int nod = NOD(f.a, f.b);
 
-    std::cout << "Сумма: " << f.a/nod << "/" << f.b/nod;
+    std::cout << "Сумма: " << f.a / nod << "/" << f.b / nod;
 }

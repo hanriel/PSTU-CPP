@@ -6,16 +6,14 @@ using namespace std;
 bool check(string word) {
     int len = word.length();
     for (int i = 0; i < len / 2; ++i) {
-        if (word[i] != word[len - i - 1])
-        {
+        if (word[i] != word[len - i - 1]) {
             return false;
         }
     }
     return true;
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "rus");
     char line[255];
     gets(line);
@@ -24,6 +22,6 @@ int main()
         cout << "Данная строка палиндром\n";
     else
         cout << "Не палиндром\n";
-   
+
     system("pause");
 }

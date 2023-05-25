@@ -357,6 +357,7 @@ Student p;
 ```c++
 p.set_name("Ivan");
 ```
+
 ---
 Лабораторная работа доступна в GitHub репозитории [hanriel/PSTU-CPP](https://github.com/hanriel/PSTU-CPP/)
 

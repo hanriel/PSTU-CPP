@@ -5,16 +5,15 @@ const int len = 3;
 int matrixSum(int n, int **a) {
     int sum = 0;
     for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++) 
+        for (int j = 0; j < n; j++)
             if (i > j) sum += a[i][j];
     return sum;
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "rus");
     srand(time(nullptr));
-    int **matrix = new int*[len];
+    int **matrix = new int *[len];
     for (int i = 0; i < len; ++i)
         matrix[i] = new int[len];
 

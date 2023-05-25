@@ -34,7 +34,7 @@ public:
 
     friend Money operator-(const Money &lhs, const Money &rhs);
 
-    Money operator+(const Money& k) const;
+    Money operator+(const Money &k) const;
 
     //глобальные функции ввода-вывода
     friend istream &operator>>(istream &in, Money &m);

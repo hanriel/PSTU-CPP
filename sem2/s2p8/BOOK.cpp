@@ -11,26 +11,27 @@ BOOK::BOOK() : PRINT() {
 
 BOOK::~BOOK() {}
 
-BOOK::BOOK(const string& _name, const string& _author, int _pages, const string& _publisher) : PRINT(_name, _author) {
+BOOK::BOOK(const string &_name, const string &_author, int _pages, const string &_publisher) : PRINT(_name, _author) {
     pages = _pages;
     publisher = _publisher;
 }
 
 BOOK::BOOK(const BOOK &L) {
     name = L.name;
-    author= L.author;
+    author = L.author;
     pages = L.pages;
     publisher = L.publisher;
 }
 
 void BOOK::setPages(int G) { pages = G; }
+
 void BOOK::setPublisher(string) { publisher = std::move(G); }
 
 
 BOOK &BOOK::operator=(const BOOK &book) {
     if (&book == this) return *this;
     name = book.name;
-    author= book.author;
+    author = book.author;
     pages = book.pages;
     publisher = book.publisher;
     return *this;

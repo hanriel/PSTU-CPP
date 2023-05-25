@@ -1,8 +1,7 @@
 ﻿#include <iostream>
 #include <cmath>
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "rus");
     char a = 100;
 

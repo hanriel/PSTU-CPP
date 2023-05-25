@@ -50,7 +50,7 @@ Money operator-(const Money &lhs, const Money &rhs) {
     return obj;
 }
 
-Money Money::operator+(const Money& k) const {
+Money Money::operator+(const Money &k) const {
     int t = rub * 100 + cheers;
     int kt = k.rub * 100 + k.cheers;
     t += kt;

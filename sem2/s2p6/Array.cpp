@@ -68,7 +68,7 @@ istream &operator>>(istream &in, Array &a) {
 Array Array::operator+(const int k)//+k
 {
     Array temp(size);
-    for (int i=0;i<size;++i)
-        temp.data[i]+=data[i]+k;
+    for (int i = 0; i < size; ++i)
+        temp.data[i] += data[i] + k;
     return temp;
 }
