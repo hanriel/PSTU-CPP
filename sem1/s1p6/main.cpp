@@ -18,7 +18,7 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     char line[255];
-    gets_s(line);
+    gets(line);
 
     if (check(line))
         cout << "Данная строка палиндром\n";
