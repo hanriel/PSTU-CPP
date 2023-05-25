@@ -62,5 +62,5 @@ int main() {
     r3 = n++ > m;
     printf("%d, %d, %d", r1, r2, r3);
 
-    system("pause");
+    return 0;
 }

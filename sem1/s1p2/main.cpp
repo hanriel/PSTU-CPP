@@ -15,6 +15,6 @@ int main() {
         n = n + 1.0;
     }
 
-    system("pause");
+    return 0;
 }
 

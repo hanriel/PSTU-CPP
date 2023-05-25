@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <sstream>
+#include <cstdio>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ bool check(string word) {
 int main() {
     setlocale(LC_ALL, "rus");
     char line[255];
-    gets(line);
+    cin.getline(line, sizeof line);
 
     if (check(line))
         cout << "Данная строка палиндром\n";

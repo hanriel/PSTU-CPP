@@ -45,5 +45,5 @@ int main() {
     for (int i = 0; i < len; i++) printf("%d: %d \n", i, a[i]);
 
 
-    system("pause");
+    return 0;
 }

@@ -32,6 +32,5 @@ int main() {
 
     std::cout << s;
 
-    system("pause");
-
+    return 0;
 }

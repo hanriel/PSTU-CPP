@@ -25,7 +25,7 @@ BOOK::BOOK(const BOOK &L) {
 
 void BOOK::setPages(int G) { pages = G; }
 
-void BOOK::setPublisher(string) { publisher = std::move(G); }
+void BOOK::setPublisher(string G) { publisher = std::move(G); }
 
 
 BOOK &BOOK::operator=(const BOOK &book) {

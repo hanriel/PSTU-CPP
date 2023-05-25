@@ -55,3 +55,14 @@ void PRINT::Input() {
     cout << "\nAuthor:";
     cin >> author;
 }
+
+void PRINT::HandleEvent(const TEvent &e) {
+    //событие-сообщение
+    if (e.what == evMessage) {
+        switch (e.command) {
+            case cmGet:
+                cout << "Name=" << Get_name() << endl;
+                break;
+        }
+    }
+}

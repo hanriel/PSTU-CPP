@@ -34,5 +34,5 @@ int main() {
              << "  SN=" << SN << "  SE=" << SE << "  Y=" << Y << "\n";
     }
 
-    system("pause");
+    return 0;
 }

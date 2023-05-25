@@ -40,6 +40,8 @@ public:
     void Set_author(string);
 
     PRINT &operator=(const PRINT &);//перегрузка операции присваивания
+
+    void HandleEvent(const TEvent &e);
 };
 
 
