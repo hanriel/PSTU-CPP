@@ -23,7 +23,7 @@ int main() {
         cout << "Error: Can't open the file named F1.txt.\n";
         exit(1);
     }
-    out.open("F2.txt", ios::__noreplace);
+    out.open("F2.txt", ios::out);
 
     getline(in, _buff);
     while (in) {
