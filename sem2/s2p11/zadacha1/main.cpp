@@ -12,98 +12,140 @@
 #include <iostream>
 #include <queue>
 #include <cstdlib>
+#include <stdexcept>
 
 using namespace std;
 
 typedef queue<int> Que;
 
+// Создание очереди со случайными элементами
 Que make_queue(int n) {
-    Que v; //пустая очередь
+    if (n <= 0) {
+        throw invalid_argument("Queue size must be positive");
+    }
+    
+    Que v;
     for (int i = 0; i < n; i++) {
-        int a = rand() % 100 - 50;
-        v.push(a); //добавляем а в конец очереди
+        int a = rand() % 100 - 50; // числа от -50 до 49
+        v.push(a);
     }
-    return v; //возвращаем очередь как результат работы функции
+    return v;
 }
 
-//функция для печати очереди
-void print_queue(Que &v) {
+// Печать очереди без ее изменения
+void print_queue(const Que &v) {
     Que tmp = v;
     while (!tmp.empty()) {
-        std::cout << tmp.front() << " ";
+        cout << tmp.front() << " ";
         tmp.pop();
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
-//Функция для нахождения максимального элемента контейнера и добавления его в конец контейнера
-int max_element(Que &v) {
+// Нахождение максимального элемента
+int max_element(const Que &v) {
+    if (v.empty()) {
+        throw runtime_error("Queue is empty");
+    }
+    
     Que tmp = v;
-    int max = tmp.front();
+    int max_val = tmp.front();
+    tmp.pop();
+    
     while (!tmp.empty()) {
-        if (tmp.front() > max) {
-            max = tmp.front();
+        if (tmp.front() > max_val) {
+            max_val = tmp.front();
         }
         tmp.pop();
     }
-    return max;
+    return max_val;
 }
 
-//Функция для нахождения элемента с заданным ключом и удаления его из контейнера
-int find_element(Que &v, int key) {
-    Que tmp = v;
-    while (!tmp.empty()) {
-        if (tmp.front() == key) {
-            tmp.pop();
-            return key;
+// Удаление первого вхождения элемента
+bool remove_first_occurrence(Que &v, int key) {
+    Que tmp;
+    bool found = false;
+    
+    while (!v.empty()) {
+        int current = v.front();
+        v.pop();
+        
+        if (!found && current == key) {
+            found = true; // пропускаем первый найденный элемент
+        } else {
+            tmp.push(current); // сохраняем остальные элементы
         }
-        tmp.pop();
     }
-    return -1;
+    
+    v = tmp; // восстанавливаем очередь
+    return found;
 }
 
-//Функция для нахождения среднего арифметического контейнера
-int get_average(Que &v) {
+// Вычисление среднего арифметического (с плавающей точкой)
+double get_average(const Que &v) {
+    if (v.empty()) {
+        throw runtime_error("Queue is empty");
+    }
+    
     Que tmp = v;
-    int sum = 0;
+    double sum = 0;
+    int count = 0;
+    
     while (!tmp.empty()) {
         sum += tmp.front();
+        count++;
         tmp.pop();
     }
-    return sum / v.size();
+    
+    return sum / count;
 }
 
-// Добавить среднее арифметическое к каждому элементу контейнера
-int add_average(Que &v) {
+// Добавление среднего к каждому элементу
+void add_average(Que &v) {
+    if (v.empty()) return;
+    
+    double avg = get_average(v);
     Que tmp;
-    int avg = get_average(v);
+    
     while (!v.empty()) {
-        tmp.push(v.front() + avg);
+        tmp.push(v.front() + static_cast<int>(avg));
         v.pop();
     }
+    
     v = tmp;
-    return 0;
 }
 
 int main() {
+    setlocale(LC_ALL, "ru_RU.UTF-8");
     try {
-        queue<int> v;//вектор
-        auto vi = v.front(); //итератор
         int n;
-        cout << "N?";
+        cout << "Введите размер очереди N: ";
         cin >> n;
-        v = make_queue(n);//формирование вектора
-        cout << "Вектор: ";
-        print_queue(v);//печать вектора
+        
+        Que v = make_queue(n);
+        cout << "Очередь: ";
+        print_queue(v);
 
-        cout << "Max: " << max_element(v) << endl;
-        cout << "Average: " << get_average(v) << endl;
+        cout << "Максимальный элемент: " << max_element(v) << endl;
+        cout << "Среднее арифметическое: " << get_average(v) << endl;
+
+        int key;
+        cout << "Введите элемент для удаления: ";
+        cin >> key;
+        if (remove_first_occurrence(v, key)) {
+            cout << "Элемент " << key << " удален. Новая очередь: ";
+            print_queue(v);
+        } else {
+            cout << "Элемент " << key << " не найден." << endl;
+        }
+
         add_average(v);
-        cout << "Вектор: ";
-        print_queue(v);//печать вектора
+        cout << "Очередь после добавления среднего: ";
+        print_queue(v);
     }
-    catch (int) {
-        cout << "Error!";
+    catch (const exception &e) {
+        cerr << "Ошибка: " << e.what() << endl;
+        return 1;
     }
 
     return 0;

@@ -2,35 +2,34 @@
 
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-//шаблон класса
 template<class T>
 class Vector {
-    vector<T> v;//последовательный контейнер для хранения элементов вектора
+    vector<T> v;
     int len;
 public:
-    Vector(void);//конструктор без параметра
-    Vector(int n);//конструктор с параметром
-    void Print();//печать
-    ~Vector(void);//деструктор
+    Vector();
+    Vector(int n);
+    void Print();
+    ~Vector();
 
-    T Average();//вычисление среднего арифметического
-    void Add(T el, int pos);//добавление элемента el на позицию pos
+    T Max(); // Найти максимальный элемент
+    void AddMaxToEnd(); // Добавить максимальный элемент в конец
+    bool Remove(const T& key); // Удалить элемент по ключу
+    T Average(); // Вычислить среднее арифметическое
+    void AddAverageToElements(); // Добавить среднее к каждому элементу
+    void Add(const T& el, int pos); // Добавить элемент на позицию
 };
 
-//конструктор без параметра
 template<class T>
-Vector<T>::Vector() {
-    len = 0;
-}
+Vector<T>::Vector() : len(0) {}
 
-//деструктор
 template<class T>
-Vector<T>::~Vector(void) {}
+Vector<T>::~Vector() {}
 
-//конструктор с параметром
 template<class T>
 Vector<T>::Vector(int n) {
     T a;
@@ -41,11 +40,58 @@ Vector<T>::Vector(int n) {
     len = v.size();
 }
 
-//печать
 template<class T>
 void Vector<T>::Print() {
-    for (int i = 0; i < v.size(); i++)
-        cout << v[i] << " ";
+    for (const auto& item : v) {
+        cout << item << " ";
+    }
     cout << endl;
 }
 
+template<class T>
+T Vector<T>::Max() {
+    if (v.empty()) throw runtime_error("Vector is empty");
+    return *max_element(v.begin(), v.end());
+}
+
+template<class T>
+void Vector<T>::AddMaxToEnd() {
+    v.push_back(Max());
+    len++;
+}
+
+template<class T>
+bool Vector<T>::Remove(const T& key) {
+    auto it = find(v.begin(), v.end(), key);
+    if (it != v.end()) {
+        v.erase(it);
+        len--;
+        return true;
+    }
+    return false;
+}
+
+template<class T>
+T Vector<T>::Average() {
+    if (v.empty()) throw runtime_error("Vector is empty");
+    T sum;
+    for (const auto& item : v) {
+        sum = sum + item;
+    }
+    return sum / len;
+}
+
+template<class T>
+void Vector<T>::AddAverageToElements() {
+    T avg = Average();
+    for (auto& item : v) {
+        item = item + avg;
+    }
+}
+
+template<class T>
+void Vector<T>::Add(const T& el, int pos) {
+    if (pos < 0 || pos > len) throw out_of_range("Invalid position");
+    v.insert(v.begin() + pos, el);
+    len++;
+}

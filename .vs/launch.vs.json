@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "s2p12v2.exe (sem2\\s2p12\\zadacha2\\s2p12v2.exe)",
+      "name": "s2p12v2.exe (sem2\\s2p12\\zadacha2\\s2p12v2.exe)"
+    }
+  ]
+}

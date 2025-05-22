@@ -30,6 +30,8 @@ int main() {
         cout << "\n5. Change value of record";
         cin >> c;
         switch (c) {
+            case 0:
+                return 0;
             case 1:
                 cout << "\nEnter file name: ";
                 cin >> filename;
