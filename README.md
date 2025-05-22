@@ -34,7 +34,7 @@
 | [7. Шаблоны классов](../main/sem2/s2p7/)                                      | :white_check_mark: | :white_check_mark: |
 | [8. Программа, управляемая событиями](../main/sem2/s2p8/)                     | :white_check_mark: | :white_check_mark: |
 | [9. Обработка исключительных ситуаций](../main/sem2/s2p9/)                    | :white_check_mark: | :white_check_mark: |
-| [10. Сохранение данных в файле с использованием потоков](../main/sem2/s2p10/) | :white_check_mark: |        :x:         |
+| [10. Сохранение данных в файле с использованием потоков](../main/sem2/s2p10/) | :white_check_mark: | :white_check_mark: |
 | [11. Последовательные контейнеры библиотеки STL.](../main/sem2/s2p11/)        | :white_check_mark: |        :x:         |
 | [12. Ассоциативные контейнеры библиотеки STL.](../main/sem2/s2p12/)           | :white_check_mark: |        :x:         |
 | [13. Стандартные обобщенные алгоритмы библиотеки STL.](../main/sem2/s2p13/)   | :white_check_mark: |        :x:         |
